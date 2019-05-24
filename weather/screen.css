@@ -48,10 +48,8 @@ nav ul li {
   nav {
     position: fixed;
     bottom: 0;
-    left: 0;
     background: rgb(50, 164, 202);
-    width: 50000%;
-    length: auto;
+    border-radius: center;
   }
   footer{
     margin-bottom: 2em;
