@@ -6,12 +6,16 @@
   <title>Franklin, ID</title>
   <meta name="description" content="Weather information">
   <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="/weather/screen.css" media="screen">
  </head>
  <body>
-     <header>
+    <header id="pageheader">
+            <!-- <div id="logo"> &#9748;</div>
+            <p id="site-brand">The Weather Site</p> -->
          <h1>
-            <img src="images/logo.jpeg" alt="Site logo">
-            The Weather Site 
+            <!-- <img src="images/logo.jpeg" alt="Site logo"> -->
+            <div id="logo"> &#9748;</div>
+            The Weather Site
          </h1>
      </header>
      <nav>
@@ -23,51 +27,73 @@
          </ul>
      </nav>
      <main>
-        <h2>
+        <h2 id="franklin">
             Franklin, Idaho
         </h2>
         <p>
-            <b>Zip</b>: 29601 | <b>Elevation</b>: 294.437 m | <b>Location</b>: -82.4&#176; S, 34.85&#176; W
+            <b>Zip</b>: 83237 | <b>Elevation</b>: 1514.246 m | <b>Location</b>: 42.07&#176; S, 111.79&#176; W,
         </p>
-        <nav>
+        <section id="temps" class="tile">
             <h2>
                 Temperature
             </h2>
-            <img src="images/weather-tile.png" alt="current weather displayed">
-        </nav>
-        <nav>
+        <ul>
+                <li id ="current">
+               40&#176F 
+            </li>
+            <li>
+                <span id="high">64 F</span> <span id="low">41 F</span>
+            </li>
+            <li>
+                Feels Like <span id="feels">21</span> F
+            </li>
+        </ul>
+        </section>
+        <section id="wind" class="tile">
             <h2>
                 Wind
             </h2>
-            <img src="images/wind-pointer.png" alt="wind direction display">
                 <ul>
                     <li>
-                        <b>Wind Speed</b>: 2 mph
+                        <img src="images/wind-pointer.png">
                     </li>
                     <li>
-                        <b>Direction</b>: NW
+                        <b>Wind Speed</b>: 5 mph
                     </li>
                     <li>
-                        <b>Gusts</b>: 5 mph
+                        <b>Direction</b>: SW
+                    </li>
+                    <li>
+                        <b>Gusts</b>: 10 - 12 mph
                     </li>
                 </ul>
-        </nav>
-        <nav>
+        </section>
+        <section id="summary" class="tile">
             <h2>Clear</h2>
-            <img src="images/clear.jpg" alt="photo of a clear day">
-        </nav>
-        <nav>
+            <ul>
+                <li>
+                    <img id="rain" src="images/rain.jpg"> 
+                </li>
+                <li>
+                    LO: 111.79 / LA: 42.07 <br>
+                    Elevation: 1514.246 <br>
+                    Zip: 83237
+                </li>
+            </ul>
+        </section> 
+        <section id="hourly"> 
             <h2>
                 Hourly Forecast
             </h2>
             <p>
-                10am: 55&#176; F |11am: 55&#176; F |12pm: 56&#176; F |1pm: 57&#176; F |2pm: 57&#176; F 
-                |3pm: 57&#176; F |4pm: 59&#176; F |5pm: 59&#176; F |6pm: 59&#176; F |7pm: 60&#176; F |8pm: 61&#176; F |9pm: 63&#176; F |10pm: 64&#176; F |
+                10am: <span id ="10a">41</span>&#176; F | 11am: <span ID="11">41</span>&#176; F | 12pm: <span id ="12">41</span>&#176; F | 1pm: <span id ="1">41</span>&#176; F | 2pm: <span id ="2">41</span>&#176; F 
+                | 3pm: <span id ="3">41</span>&#176; F | 4pm: <span id ="4">42</span>&#176; F | 5pm: <span id ="5">44</span>&#176; F | 6pm: <span id ="6">44</span>&#176; F | 7pm: <span id ="7">46</span>&#176; F 
+                | 8pm: <span id ="8">49</span>&#176; F | 9pm: <span id ="9">51</span>&#176; F | 10pm: <span id ="10p">55</span>&#176; F |
             </p>
-        </nav>
+        </section>
      </main>
-     <footer>
-         &copy;2019, The Weather Site 
+     <footer id="foot">
+         &copy;2019 - The Weather Site 
      </footer>
  </body>
 </html>

@@ -1,0 +1,102 @@
+/* ******************************
+*  Stylesheet for Screened Devices
+*  Created by: Ezra Rojas
+*  
+*  1.  Includes (fonts and supplementary stylesheets)
+*  1.1 Normalize
+*  1.2 Google fonts
+*
+*  2.  General Styles (for all pages and devices)
+*
+*  3.  Mobile First (styles specific to small screens)
+*
+*  4.  Large Screen Styles (Media Queries begin here)
+*
+* ****************************** */
+
+/* 1.  Includes (fonts and supplementary stylesheets) */
+/* 1.1 Normalize Import */ 
+@import url('normalize.css');
+/* 1.2 Google Font Import */
+@import url('https://fonts.googleapis.com/css?family=Sansita&display=swap');
+/* General */
+html {
+    box-sizing: border-box;
+   }
+   
+   *, *:before, *:after{
+    box-sizing: inherit;
+   }
+   body{
+    font-family: helvetica, verdana, sans-serif;
+    font-size: 20px;
+  }
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Santita', sans-serif;
+}
+.tile{
+    background-color: rgba(200,200,200,.6);
+    margin: .2em auto;
+    border: 1px solid;
+    border-radius: 15px;
+    text-align: center;
+}
+nav ul li { 
+    display: inline-block; 
+    list-style: none; 
+  }
+  nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: rgb(50, 164, 202);
+    width: 50000%;
+    length: auto;
+  }
+  footer{
+    margin-bottom: 2em;
+    background: rgb(50, 164, 202);
+   }
+#site-brand {
+    font-size: 2em;
+    font-weight: 600;
+  }
+ #logo {
+     display: inline;
+ }
+ header h1 {
+     background-color: rgb(50, 164, 202);
+ }
+#franklin {
+    font-size: 3em;  
+}
+#hourly {
+    margin: .2em auto;
+    border: 1px solid;
+    border-radius: 15px;
+    text-align: center;
+}
+#rain {
+    width: 50%;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+#high {
+    color: red;
+}
+#low {
+    color: blue;
+}
+#current {
+    font-size: 4em;
+}
+
+#hourly p {
+    overflow-x: scroll;
+}
+body {
+    padding-bottom: 20px;
+}
+
