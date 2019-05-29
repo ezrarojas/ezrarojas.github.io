@@ -28,11 +28,11 @@ html {
     box-sizing: inherit;
    }
    body{
-    font-family: helvetica, verdana, sans-serif;
+    font-family: 'helvetica', sans-serif;
     font-size: 20px;
   }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Santita', sans-serif;
+    font-family: 'Sansita', sans-serif;
 }
 .tile{
     background-color: rgba(200,200,200,.6);
@@ -97,4 +97,5 @@ ul {
 body {
     padding-bottom: 20px;
 }
+
 
