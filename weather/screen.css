@@ -49,7 +49,7 @@ nav ul li {
     position: fixed;
     bottom: 0;
     background: rgb(50, 164, 202);
-    border-radius: center;
+    border-radius: 25px;
   }
   footer{
     margin-bottom: 2em;
