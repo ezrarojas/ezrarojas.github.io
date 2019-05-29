@@ -50,6 +50,7 @@ nav ul li {
     bottom: 0;
     background: rgb(50, 164, 202);
     border-radius: 25px;
+    width: 5000px;
   }
   footer{
     margin-bottom: 2em;
