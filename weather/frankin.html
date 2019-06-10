@@ -14,11 +14,13 @@
     <header id="pageheader">
             <!-- <div id="logo"> &#9748;</div>
             <p id="site-brand">The Weather Site</p> -->
-         <h1>
-            <!-- <img src="images/logo.jpeg" alt="Site logo"> -->
-            <div id="logo"> &#9748;</div>
+          <!-- <img src="images/logo.jpeg" alt="Site logo"> -->
+          <div id="logo"> &#9748;
+            <h1>
             The Weather Site
-         </h1>
+             </h1>
+        </div>
+         
      </header>
      <nav>
          <ul>
@@ -35,7 +37,8 @@
         <p>
             <b>Zip</b>: 83237 | <b>Elevation</b>: 1514.246 m | <b>Location</b>: 42.07&#176; S, 111.79&#176; W,
         </p>
-        <section id="temps" class="tile">
+        <section id="row">
+            <section id="temps" class="tile">
             <h2>
                 Temperature
             </h2>
@@ -59,8 +62,8 @@
                     <li>
                         <img src="images/wind-pointer.png" alt="Wind">
                     </li>
-                    <li>
-                        <b>Wind Speed</b>: 5 mph
+                    <li id="speed">
+                        5 mph
                     </li>
                     <li>
                         <b>Direction</b>: SW
@@ -77,12 +80,13 @@
                     <img id="rain" src="images/rain.jpg" alt="rain"> 
                 </li>
             </ul>   
+            </section>
         </section> 
         <section id="hourly"> 
             <h2>
                 Hourly Forecast
             </h2>
-            <p>
+            <p id="forecast">
                 10am: <span id ="10a">41</span>&#176; F | 11am: <span ID="11">41</span>&#176; F | 12pm: <span id ="12">41</span>&#176; F | 1pm: <span id ="1">41</span>&#176; F |
                 2pm: <span id ="2">41</span>&#176; F | 3pm: <span id ="3">41</span>&#176; F | 4pm: <span id ="4">42</span>&#176; F |
                 5pm: <span id ="5">44</span>&#176; F | 6pm: <span id ="6">44</span>&#176; F | 7pm: <span id ="7">46</span>&#176; F | 8pm: <span id ="8">49</span>&#176; F |
