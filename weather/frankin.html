@@ -15,7 +15,7 @@
             <!-- <div id="logo"> &#9748;</div>
             <p id="site-brand">The Weather Site</p> -->
           <!-- <img src="images/logo.jpeg" alt="Site logo"> -->
-          <div id="logo"> &#9748;
+          <div id="logo"> <span id="grow">&#9748;</span>
             <h1>
             The Weather Site
              </h1>
@@ -35,9 +35,10 @@
             Franklin, Idaho
         </h2>
         <p>
-            <b>Zip</b>: 83237 | <b>Elevation</b>: 1514.246 m | <b>Location</b>: 42.07&#176; S, 111.79&#176; W,
+            <b>Zip</b>: 83237 | <b>Elevation</b>: <span id="meters">1514.246</span> F| <b>Location</b>: 42.07&#176; S, 111.79&#176; W,
         </p>
         <section id="row">
+            <div id="curWeather" class="snow">
             <section id="temps" class="tile">
             <h2>
                 Temperature
@@ -60,9 +61,11 @@
                 Wind
             </h2>
                 <ul>
-                    <li> <div id="dial" class="w"></div></li>
+                    <li> 
+                        <div id="dial" class="w"></div>
+                    </li>
                     <li>
-                        5 mph
+                        <div id="mph">5 mph </div>
                     </li>
                     <li>
                         <b>Direction</b>: SW
@@ -81,6 +84,7 @@
                 </li>
             </ul>   
             </section>
+        </div>
         </section> 
         <section id="hourly"> 
             <h2>

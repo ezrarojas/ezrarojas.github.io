@@ -49,7 +49,6 @@ nav ul li {
     position: fixed;
     bottom: 0;
     background: rgb(50, 164, 202);
-    /* border-radius: 25px; */
     width: 100%;
   }
   footer{
@@ -61,11 +60,7 @@ nav ul li {
     font-weight: 600;
   }
  #logo {
-     /* display: flex; */
-     max-width: 500;
-     width: 100%;
-     
-     
+     display: inline;
  }
  header h1 {
      background-color: rgb(50, 164, 202);
@@ -106,22 +101,20 @@ body {
 #forecast {
     overflow: auto;
     white-space: nowrap;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 body {
     padding-right: 30px;
     padding-left: 30px;
 }
-#speed {
-    margin-top: -100px;
+#mph {
+    margin-top: -85px;
     padding-bottom: 80px;
+    margin-left: 40%;
 }
 h1 {
     display: inline;
-    
-}
-#row {
-    background-image: url(images/rain.jpg);
-    /* background-size:  */
 }
 #dial {
     height: 150px;
@@ -130,14 +123,59 @@ h1 {
     z-index: 100;
     margin: -.6em auto 0;
    }
+   .n {transform: rotate(0deg);
+   }
+   .ne {
+       transform: rotate(45deg);
+   }
+   .e {
+    transform: rotate(90deg);
+   }
+   .se {
+    transform: rotate(135deg);
+   }
+    .s {
+       transform: rotate(180deg);
+   }
+   .sw {
+    transform: rotate(225deg);
+   }
+   .w {
+    transform: rotate(270deg);
+   }
+.nw {
+       transform: rotate(315deg);
+   }
+   #curWeather {
+    background-size: cover;
+   }
+   
+   /* Background pictures for summary */
+   .clear {
+    background-image: url("/weather/images/clear_small.jpg");
+   }
+   .snow {
 
+   }
+   .rain {
+
+   }
+   .cloud {
+
+   }
+   .fog {
+
+   }
+#grow {
+    font-size: 40px;
+}
+/*********************************************************************************************/ 
 @media screen and (min-width:400px) {
     nav {
         position: relative; 
     }
-    #row {
+    #row div {
         display: flex;
-        background-image: url(images/rain.jpg);
     }
     #temps {
         flex-grow: 1;
@@ -154,5 +192,19 @@ h1 {
     body {
         padding-bottom: 0;
     }
-    
+    .clear {
+    background-image: url("../responsiveimages/images/clear.jpg");
+   }
+   .snow {
+    background-image: url("../responsiveimages/images/snow.jpg");
+   }
+   .rain {
+    background-image: url("../responsiveimages/images/rain.jpg");
+   }
+   .cloud {
+    background-image: url("../responsiveimages/images/clouds.jpg");
+   }
+   .fog {
+    background-image: url("../responsiveimages/images/fog.jpg");
+   }
 }
