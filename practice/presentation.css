@@ -1,0 +1,37 @@
+body {
+    color: white;
+    font-size: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px;
+}
+
+h1{
+    text-shadow: 5px 5px black (0,0,0,.25);
+    font-family: 'chewey', cursive;
+    font-size: 7.5rem;
+    margin: 0 .25rem;
+}
+body {
+    color: tan;
+}
+body {
+    background: pink; 
+}
+.defenition {
+    color: blue;
+}
+
+body {
+    color: tan;
+}
+.source {
+    color: purple;
+}
+#source{
+    color: black;
+}
+
+
+

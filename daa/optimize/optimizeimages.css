@@ -1,0 +1,46 @@
+/* Table of Contents 
+1. Imports
+2. General Rules
+3. Mobile Rules
+4. Large Screen Rules
+*/
+
+/* 1. Imports */
+
+/* 2. General Rules */
+div>main {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.box {
+    border: 2px solid;
+    padding: 10px;
+    margin: 10px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+/* 3. Mobile Rules */
+.large {
+    display: none;
+}
+
+/* 4. Large Screen Rules */
+@media screen and (min-width: 1300px) {
+
+    .small {
+        display:none;
+    }
+
+    .large {
+        display: block;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+}
