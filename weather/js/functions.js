@@ -27,7 +27,7 @@ wc = (wc > temp)?temp:wc;
  // Wind Dial Function
 function windDial(direction){
 // Get the wind dial container
-const dial = document.getElementById("wind");
+const dial = document.getElementById("dial");
 // Determine the dial class
 switch (direction){
     case "North":
