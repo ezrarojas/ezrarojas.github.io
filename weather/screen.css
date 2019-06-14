@@ -123,6 +123,13 @@ h1 {
     background-image: url(images/rain.jpg);
     /* background-size:  */
 }
+#dial {
+    height: 150px;
+    width: 150px;
+    background: no-repeat center/85% url('/weather/images/wind-pointer.png');
+    z-index: 100;
+    margin: -.6em auto 0;
+   }
 
 @media screen and (min-width:400px) {
     nav {
