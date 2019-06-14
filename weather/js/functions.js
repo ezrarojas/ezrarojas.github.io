@@ -19,12 +19,15 @@ wc = (wc > temp)?temp:wc;
  feelTemp.innerHTML = wc;
  }
  buildWC(speed, temp);
- const direction = "E"; //Set my own value
+ 
+ ////////////////////////////////////////////////////
+ 
+ const direction = "e"; //Set my own value
  windDial(direction);
  // Wind Dial Function
 function windDial(direction){
 // Get the wind dial container
-const dial = document.getElementById("dial");
+const dial = document.getElementById("wind");
 // Determine the dial class
 switch (direction){
     case "North":
