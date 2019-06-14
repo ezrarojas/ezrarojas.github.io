@@ -19,7 +19,7 @@ wc = (wc > temp)?temp:wc;
  feelTemp.innerHTML = wc;
  }
  buildWC(speed, temp);
- const direction = "NNE"; //Set my own value
+ const direction = "E"; //Set my own value
  windDial(direction);
  // Wind Dial Function
 function windDial(direction){
