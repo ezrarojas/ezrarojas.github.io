@@ -1,7 +1,7 @@
 // Variables for function to use 
-const temp=31;
-const speed=5;
-const direction="S"; 
+let temp=31;
+let speed=5;
+let direction="S"; 
 
 // windDial(direction);
 // Weather Site JavaScript Functions
@@ -9,7 +9,7 @@ console.log('My javascript is being read.');
 
 // Calculate the Windchill
 function buildWC(speed, temp) {
-    const feelTemp = document.getElementById('feels');
+    let feelTemp = document.getElementById('feels');
 
 // Compute the windchill
 let wc = 35.74 + 0.6215 * temp - 35.75 * Math.pow(speed, 0.16) + 0.4275 * temp * Math.pow(speed, 0.16);
@@ -35,7 +35,7 @@ wc = (wc > temp)?temp:wc;
 function windDial(direction){
 // Get the wind dial container
 
-const dial = document.getElementById("dial");
+let dial = document.getElementById("dial");
 console.log(direction);
 
 // Determine the dial class
@@ -80,9 +80,10 @@ switch (direction){
 }
 windDial(direction);
 /////////////////////////////////////////////////////////////////
-const phrase = "snow";
+let phrase = "snow";
 let condition = getCondition (phrase); console.log (condition);
-function getCondition (phrase){ console.log (phrase)
+function getCondition (phrase){ 
+    console.log (phrase)
     if (phrase.includes ("clear") || phrase.includes("blue")||phrase.includes("sky")||phrase.includes("bright")) {
         return "clear";
     }
@@ -100,7 +101,7 @@ function getCondition (phrase){ console.log (phrase)
     }
 }
 function changeSummaryImage (condition) {
-    const curWeather = document.getElementById("curWeather");
+    let curWeather = document.getElementById("curWeather");
     console.log(condition);
     switch (condition) {
         case "clear":
@@ -121,9 +122,9 @@ function changeSummaryImage (condition) {
     }
 }
 changeSummaryImage (condition);
-const meter = 1514.246;
+let meter = 1514.246;
 function convertMeter (meter){
-    const convert = document.getElementById("meters");
+    let convert = document.getElementById("meters");
 
     let feet = meter * 3.2808399;
     console.log(feet);
