@@ -27,7 +27,7 @@ html {
    *, *:before, *:after{
     box-sizing: inherit;
    }
-   body{
+body{
     font-family: 'helvetica', sans-serif;
     font-size: 20px;
   }
@@ -91,7 +91,7 @@ ul {
     font-size: 4em;
 }
 
-#hourly p {
+#hourly ul {
     overflow-x: scroll;
 }
 body {
@@ -103,6 +103,7 @@ body {
     white-space: nowrap;
     margin-left: 3%;
     margin-right: 3%;
+    display: flex;
 }
 body {
     padding-right: 30px;
@@ -111,7 +112,6 @@ body {
 #mph {
     margin-top: -85px;
     padding-bottom: 80px;
-    margin-left: 40%;
 }
 h1 {
     display: inline;
@@ -151,23 +151,30 @@ h1 {
    }
    
    /* Background pictures for summary */
-   .clear {
+.clear {
     background-image: url("/weather/images/clear_small.jpg");
    }
-   .snow {
-
+.snow {
+    background-image: url("../responsiveimages/images/snow.jpg");
    }
-   .rain {
-
+.rain {
+    background-image: url("../responsiveimages/images/rain.jpg");
    }
-   .cloud {
-
+.cloud {
+    background-image: url("../responsiveimages/images/clouds.jpg");
    }
-   .fog {
-
+.fog {
+    background-image: url("../responsiveimages/images/fog.jpg");
    }
 #grow {
     font-size: 40px;
+}
+.hide {
+    display: none;
+}
+#image {
+    width: 250px;
+    height: 250px;
 }
 /*********************************************************************************************/ 
 @media screen and (min-width:400px) {
@@ -176,6 +183,11 @@ h1 {
     }
     #row div {
         display: flex;
+    }
+    #mph {
+        margin-top: -85px;
+        padding-bottom: 80px;
+        margin-left: 46%;
     }
     #temps {
         flex-grow: 1;

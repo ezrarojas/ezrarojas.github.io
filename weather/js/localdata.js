@@ -1,13 +1,24 @@
-let pageNav = document.getElementById('page-nav');
+let pageNav = document.getElementById('pagenav');
 let statusContainer = document.getElementById('status');
-let contentContainer = document.getElementById('main-content');
-let weatherURL = "weather/weather.json";
+let contentContainer = document.getElementById('maincontent');
+let weatherURL = "/weather/js/weather.json";
 
-fetchData(weatherURL);
+pageNav.addEventListener("click" , function(evt){
+
+// Get the City Name 
+let cityName = evt.target.innerHTML;
+switch(cityName) {
+  case "Franklin":
+    case "Greenville":
+      case "Springfield":
+        evt.preventDefault();
+      break; 
+}
+// fetchData(weatherURL);
 
 //Function takes data from JSON file and inserts into HTML
-function fetchData(weatherURL){
-  let cityName = 'Greenville'; // The data we want from the weather.json file
+// function fetchData(weatherURL){
+//   let cityName = 'Greenville'; // The data we want from the weather.json file
   fetch(weatherURL)
   .then(function(response) {
   if(response.ok){
@@ -49,7 +60,7 @@ console.log(windSpeed);
     let gusts = g.Gusts;
     // Get the current conditions
     let locCondition = g.Summary;
-    let locPrecipitation = g.Precip;
+    console.log(g.Summary);
 
     // Get the hourly data 
     let locHourlyData = g.Hourly;
@@ -58,7 +69,7 @@ console.log(windSpeed);
     // ************ Display the content ******************************
     // Set the title with the location name at the first
     // Gets the title element so it can be worked with
-    let pageTitle = document.getElementById('page-title');
+    let pageTitle = document.getElementById('pagetitle');
     // Create a text node containing the full name 
     let fullNameNode = document.createTextNode(fullName);
     // inserts the fullName value before any other content that might exist
@@ -68,41 +79,40 @@ console.log(windSpeed);
 
     // Set the Location information
     // Get the h1 to display the city location
-    let contentHeading = document.getElementById('contentHeading');
+    let contentHeading = document.getElementById('place');
     contentHeading.innerHTML = fullName;
     // The h1 in main h1 should now say "Greenville, SC"
-    document.getElementById("elevation").innerHTML = convertMeters(locElevation);
-    document.getElementById("longitude").innerHTML = locLongitude;
-    document.getElementById("latitude").innerHTML = locLatitude;
+    convertMeter(locElevation);
+    document.getElementById("long").innerHTML = locLongitude;
+    document.getElementById("lat").innerHTML = locLatitude;
     document.getElementById("zip").innerHTML = locZip;
 
 
     // Set the temperature information
-    document.getElementById("temp").innerHTML = locTemp;
-    document.getElementById("minTemp").innerHTML = locMinTemp;
-    document.getElementById("maxTemp").innerHTML = locMaxTemp;
+    document.getElementById("current").innerHTML = locTemp;
+    document.getElementById("low").innerHTML = locMinTemp;
+    document.getElementById("high").innerHTML = locMaxTemp;
 
     // Set the wind information
     document.getElementById("direction").innerHTML = direction;
-    document.getElementById("wSpeed").innerHTML = windSpeed;
-    document.getElementById("feelTemp").innerHTML = buildWC(windSpeed, locTemp);
-    document.getElementById("wind_gusts").innerHTML = gusts;
+    document.getElementById("mph").innerHTML = windSpeed;
+    buildWC(windSpeed, locTemp);
+    document.getElementById("gusts").innerHTML = gusts;
     //Changes dial based on direction
     windDial(direction);
     // Set the current conditions information
-    document.getElementById("condition_status").innerHTML = locCondition;
+    document.getElementById("conditionstatus").innerHTML = locCondition;
     //use locCondition in getCondition and use output in changeSummaryImage
-    let condition = document.getElementById("condition_status").innerHTML;
-    console.log(condition);
-    console.log(getCondition(condition));
-    changeSummaryImage(condition);
-    document.getElementById("precipitation").innerHTML = locPrecipitation;
+    
+    console.log(locCondition);
+    let phrase = getCondition(locCondition);
+    console.log(phrase);
+    changeSummaryImage(phrase);
+  
 
     // Set the hourly temperature information
     //document.getElementById("hourly_data").innerHTML = locHourlyData;
-    let date = new Date(); 
-    let nextHour = date.getHours() + 1;
-    document.getElementById("hourly_data").innerHTML=buildHourlyData(nextHour,locHourlyData);
+    document.getElementById("forecast").innerHTML=buildHourlyData(nextHour,locHourlyData);
 
     // Change the status of the containers
     contentContainer.setAttribute('class', ''); // removes the hide class
@@ -112,4 +122,5 @@ console.log(windSpeed);
   console.log('There was a fetch problem: ', error.message);
   statusContainer.innerHTML = 'Sorry, the data could not be processed.';
   })
-}
+// }
+})

@@ -3,7 +3,7 @@
 <html lang="en-us">
  <head>
   <meta charset="UTF-8">
-  <title>Greenville, SC</title>
+  <title id="pagetitle">Greenville, SC</title>
   <meta name="description" content="Weather information">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" type="text/css" href="/weather/screen.css" media="screen">
@@ -19,20 +19,23 @@
         </div>
          
      </header>
-     <nav>
+     <nav id="pagenav">
          <ul>
              <li><a href="https://ezrarojas.github.io/" title="Go to the Weather Site home page">Current</a></li>
              <li><a href="https://ezrarojas.github.io/ezrarojas.github.io/weather/frankin.html" title="Go to Franklin, Idaho webpage">Franklin</a></li>
              <li><a href="https://ezrarojas.github.io/ezrarojas.github.io/weather/greenville.html" title="Go to Greenville, Idaho webpage">Greenville</a></li>
+             <li><a href="#" title="Go to Springfield, Illinois webpage">Springfield</a></li>
              <li><a href="#" title="search the website">Search</a></li>
          </ul>
      </nav>
-     <main>
+     <section id="status">Please be patient while I get your weather information.</section>
+     <main id="maincontent" class="hide">
         <h2 id="place">
             Greenville, South Carolina 
         </h2>
         <p>
-            <b>Zip</b>: 29601 | <b>Elevation</b>: <span id="meters">294.437</span> F| <b>Location</b>: 34.85&#176; S, -82.4&#176; W,
+            <b>Zip</b>: <span id="zip">Not Available</span> | <b>Elevation</b>: <span id="meters">294.437</span> F|
+             <b>Location</b>: <span id="long">34.85</span>&#176; S, <span id="lat">-82.4</span>&#176; W,
         </p>
         <section id="row">
             <div id="curWeather" class="snow">
@@ -65,21 +68,17 @@
                         <div id="mph">8 mph </div>
                     </li>
                     <li>
-                        <b>Direction</b>: SW
+                        <b>Direction</b>: <span id="direction">SW</span>
                     </li>
                     <li>
-                        <b>Gusts</b>: 15 - 17 mph
+                        <b>Gusts</b>: <span id="gusts">15 - 17</span> mph
                     </li>
                 </ul>
         </section>
 
         <section id="summary" class="tile">
-            <h2>Clear</h2>
-            <ul>
-                <li>
-                    <img id="rain" src="images/rain.jpg" alt="rain"> 
-                </li>
-            </ul>   
+            <h2 id="conditionstatus">Clear</h2>
+            <div id="image" class="images"></div>
             </section>
         </div>
         </section> 
@@ -87,19 +86,19 @@
             <h2>
                 Hourly Forecast
             </h2>
-            <p id="forecast">
+            <ul id="forecast">
                 10am: <span id ="10a">55</span>&#176; F | 11am: <span ID="11">55</span>&#176; F | 12pm: <span id ="12">56</span>&#176; F | 
                 1pm: <span id ="1">57</span>&#176; F | 2pm: <span id ="2">57</span>&#176; F | 3pm: <span id ="3">57</span>&#176; F | 
                 4pm: <span id ="4">59</span>&#176; F | 5pm: <span id ="5">59</span>&#176; F | 6pm: <span id ="6">59</span>&#176; F | 
                 7pm: <span id ="7">60</span>&#176; F | 8pm: <span id ="8">61</span>&#176; F | 9pm: <span id ="9">63</span>&#176; F | 
                 10pm: <span id ="10p">64</span>&#176; F 
-            </p>
+            </ul>
         </section>
      </main>
      <footer id="foot">
          &copy;2019 - The Weather Site 
      </footer>
      <script src="/weather/js/functions.js"></script>
-     <script src="../weather/js/localdata.js"></script>
+     <script src="/weather/js/localdata.js"></script>
  </body>
 </html>
