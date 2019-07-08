@@ -10,9 +10,32 @@
  }
 
  </style>
+ <script>
+   function getGeoLocation() {
+    const status = document.getElementById('status');
+ status.innerHTML = 'Getting Location...';
+ console.log(status);
+ if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+     const lat = position.coords.latitude;
+     const long = position.coords.longitude;
+  
+     // Combine the values
+     const locale = lat + "," + long;
+     console.log(`Lat and Long are: ${locale}.`);
+      // Call getLocation function, send locale
+   getLocation(locale);
+  
+  
+    })
+   } else {
+    status.innerHTML = "Your browser doesn't support Geolocation or it is not enabled!";
+   } // end else
+} 
+ </script>
 </head>
 
-<body>
+<body onload="getGeoLocation()">
  <div>
   <header>Header</header>
   <nav>Nav Bar</nav>
@@ -22,6 +45,6 @@
   </main>
   <footer>Footer</footer>
  </div>
- <script src="loctest.js"></script>
+<!-- <script src="..\geoloc.js"></script> -->
 </body>
 </html>

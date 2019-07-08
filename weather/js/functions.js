@@ -178,35 +178,8 @@ let nextHour = date.getHours() + 1;
 
 //////////////////////////////////////////////////////////////////////////////////////
 
+var storage = window.localStorage;
 
-//Functions will work to populate weather site
-'use strict';
-// Call the function to get our location
-getGeoLocation();
-//Setup localStorage
- var storage = window.localStorage;
-// Gets longitude and latitude of current location
-function getGeoLocation() {
-    const status = document.getElementById('status');
- status.innerHTML = 'Getting Location...';
- console.log(status);
- if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-     const lat = position.coords.latitude;
-     const long = position.coords.longitude;
-  
-     // Combine the values
-     const locale = lat + "," + long;
-     console.log(`Lat and Long are: ${locale}.`);
-      // Call getLocation function, send locale
-   getLocation(locale);
-  
-  
-    })
-   } else {
-    status.innerHTML = "Your browser doesn't support Geolocation or it is not enabled!";
-   } // end else
-} // end getGeoLocation
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Set global variable for custom header required by NWS API
@@ -216,7 +189,7 @@ var idHeader = {
     }
   };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+//https://api.weather.gov/points/43.809595099999996,-111.788705
 // Gets location information from the NWS API
 function getLocation(locale) {
     const URL = "https://api.weather.gov/points/" + locale; 
@@ -239,12 +212,18 @@ function getLocation(locale) {
       // Next, get the weather station ID before requesting current conditions 
       // URL for station list is in the data object 
       let stationsURL = data.properties.observationStations; 
+      let hourly = data.properties.forecastHourly;
       // Call the function to get the list of weather stations
       getStationId(stationsURL); 
+      getHourly(hourly);
+
+      
      }) 
     .catch(error => console.log('There was a getLocation error: ', error)) 
    } // end getLocation function
    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
    // Gets weather station list and the nearest weather station ID from the NWS API
 function getStationId(stationsURL) { 
@@ -298,7 +277,46 @@ function getWeather(stationId) {
    
    
       // Build the page for viewing 
-      
+      buildPage();
      }) 
     .catch(error => console.log('There was a getWeather error: ', error)) 
    } // end getWeather function
+function getHourly(hourly) {
+    fetch(hourly, idHeader) 
+    .then(function(response){
+      if(response.ok){ 
+       return response.json(); 
+      } 
+      throw new ERROR('Response not OK.');
+    })
+    .then(function (data) {
+      // Let's see what we got back
+      console.log('From getHourly function:'); 
+      console.log(data);
+
+      for (var i=0; i<=12; i++){
+          let hourlyTemps =data.properties.periods[i].temperature;
+          storage.setItem("hourlytemperature" + i, hourlyTemps);
+      }
+      
+    })
+}
+
+function buildPage() {
+    console.log(storage.getItem("hourlytemperature6"))
+    document.getElementById("10a").innerHTML = storage.getItem("hourlytemperature0");
+    document.getElementById("11").innerHTML = storage.getItem("hourlytemperature1");
+    document.getElementById("12").innerHTML = storage.getItem("hourlytemperature2");
+    document.getElementById("1").innerHTML = storage.getItem("hourlytemperature3");
+    document.getElementById("2").innerHTML = storage.getItem("hourlytemperature4");
+    document.getElementById("3").innerHTML = storage.getItem("hourlytemperature5");
+    document.getElementById("4").innerHTML = storage.getItem("hourlytemperature6");
+    document.getElementById("5").innerHTML = storage.getItem("hourlytemperature7");
+    document.getElementById("6").innerHTML = storage.getItem("hourlytemperature8");
+    document.getElementById("7").innerHTML = storage.getItem("hourlytemperature9");
+    document.getElementById("8").innerHTML = storage.getItem("hourlytemperature10");
+    document.getElementById("9").innerHTML = storage.getItem("hourlytemperature11");
+    document.getElementById("10p").innerHTML = storage.getItem("hourlytemperature12");
+    // document.getElementById("high").innerHTML = 
+}
+
