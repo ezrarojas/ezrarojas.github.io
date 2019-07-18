@@ -303,7 +303,7 @@ function getHourly(hourly) {
 }
 
 function buildPage() {
-    console.log(storage.getItem("hourlytemperature6"))
+    console.log(storage.getItem("hourlytemperatures"))
     document.getElementById("10a").innerHTML = storage.getItem("hourlytemperature0");
     document.getElementById("11").innerHTML = storage.getItem("hourlytemperature1");
     document.getElementById("12").innerHTML = storage.getItem("hourlytemperature2");
