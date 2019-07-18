@@ -183,8 +183,10 @@ h1, h2 {
 }
 #reviews {
     float: right;
+    width: 40%;
 }
 #recipes1 {
     float: left;
+    width: 60%;
 }
 }
